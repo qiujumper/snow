@@ -4,6 +4,7 @@ import { SkiDayCount } from './SkiDayCount'
 import { AddDayForm } from './AddDayForm'
 import { Menu } from './Menu'
 
+
 export class App extends Component {
 	constructor(props) {
 		super(props)
@@ -19,7 +20,6 @@ export class App extends Component {
 		]
 		}
 		this.addDay = this.addDay.bind(this)
-		console.log('hello there');
 	}
 
 	addDay(newDay) {
@@ -41,7 +41,7 @@ export class App extends Component {
 		return (
 			<div className="app">
 				<Menu />
-			    {/* aa */ }
+
 				{(this.props.location.pathname === "/") ?
 				  <SkiDayCount total={this.countDays()}
 								 powder={this.countDays(
@@ -51,7 +51,8 @@ export class App extends Component {
 								 		"backcountry"
 								 	)}/> :
 				 (this.props.location.pathname === "/add-day") ?
-				 	<AddDayForm onNewDay={this.addDay}/> :
+				 	<AddDayForm onNewDay={this.addDay}/> : 
+				 	//or it's a list day 我发现，在react中写注释，也要看是在哪个代码段的
 				 	<SkiDayList days={this.state.allSkiDays}
 				 				filter={this.props.params.filter}/>				 
 				}

@@ -7,7 +7,7 @@ import { PropTypes } from 'react'
 const percentToDecimal = (decimal) => {
 	return ((decimal * 100) + '%')
 }
-
+// This is not global function
 const calcGoalProgress = (total, goal) => {
 	return percentToDecimal(total/goal)
 }
@@ -41,6 +41,7 @@ export const SkiDayCount = ({total=70, powder=20,
 		</div>
 )
 
+//use to check data type
 SkiDayCount.propTypes = {
   total: PropTypes.number,
   powder: PropTypes.number,
